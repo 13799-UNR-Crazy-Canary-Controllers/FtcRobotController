@@ -30,9 +30,11 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 import org.firstinspires.ftc.teamcode.CanaryBot;
 
 /**
@@ -57,11 +59,11 @@ import org.firstinspires.ftc.teamcode.CanaryBot;
  */
 
 @Autonomous(name="UNR_CCC_AUTO_BASIC_STARTRIGHT_strafe", group="Pushbot")
-//@Disabled
+@Disabled
 public class UNR_CCC_Auto3 extends LinearOpMode {
 
     /* Declare OpMode members. */
-    HardwarePushbot         robot   = new HardwarePushbot();   // Use a Pushbot's hardware
+    HardwarePushbot robot   = new HardwarePushbot();   // Use a Pushbot's hardware
     private ElapsedTime     runtime = new ElapsedTime();
 
 
@@ -88,10 +90,10 @@ public class UNR_CCC_Auto3 extends LinearOpMode {
 
         // Step 1:  Drive forward for 3 seconds
 //
-        robot.frontLeftDrive.setPower(FORWARD_SPEED);
-        robot.frontRightDrive.setPower(FORWARD_SPEED);
-        robot.backLeftDrive.setPower(FORWARD_SPEED);
-        robot.backRightDrive.setPower(FORWARD_SPEED);
+        //robot.frontLeftDrive.setPower(FORWARD_SPEED);
+        //robot.frontRightDrive.setPower(FORWARD_SPEED);
+        //robot.backLeftDrive.setPower(FORWARD_SPEED);
+        //robot.backRightDrive.setPower(FORWARD_SPEED);
 
         runtime.reset();
         //Initial forward time is 1.35 seconds
@@ -100,18 +102,18 @@ public class UNR_CCC_Auto3 extends LinearOpMode {
             telemetry.update();
         }
 //
-        robot.frontLeftDrive.setPower(0);
-        robot.frontRightDrive.setPower(0);
-        robot.backLeftDrive.setPower(0);
-        robot.backRightDrive.setPower(0);
+        //robot.frontLeftDrive.setPower(0);
+        //robot.frontRightDrive.setPower(0);
+        //robot.backLeftDrive.setPower(0);
+        //robot.backRightDrive.setPower(0);
         sleep(1000);
 
 //         Step 2:  strafe left
 
-        robot.frontLeftDrive.setPower(-FORWARD_SPEED);
-        robot.frontRightDrive.setPower(FORWARD_SPEED);
-        robot.backLeftDrive.setPower(FORWARD_SPEED);
-        robot.backRightDrive.setPower(-FORWARD_SPEED);
+        //robot.frontLeftDrive.setPower(-FORWARD_SPEED);
+        //robot.frontRightDrive.setPower(FORWARD_SPEED);
+        //robot.backLeftDrive.setPower(FORWARD_SPEED);
+        //robot.backRightDrive.setPower(-FORWARD_SPEED);
 
         runtime.reset();
         //Initial forward time is 1.35 seconds
@@ -119,10 +121,10 @@ public class UNR_CCC_Auto3 extends LinearOpMode {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
-        robot.frontLeftDrive.setPower(0);
-        robot.frontRightDrive.setPower(0);
-        robot.backLeftDrive.setPower(0);
-        robot.backRightDrive.setPower(0);
+        //robot.frontLeftDrive.setPower(0);
+        //robot.frontRightDrive.setPower(0);
+        //robot.backLeftDrive.setPower(0);
+        //robot.backRightDrive.setPower(0);
 
         sleep(1000);
     }
