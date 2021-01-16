@@ -29,10 +29,11 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+
+import static android.os.SystemClock.sleep;
 
 /**
  * This is NOT an opmode.
@@ -97,10 +98,7 @@ public class CanaryBot
         backRightDrive.setDirection(DcMotor.Direction.FORWARD);
         arm.setDirection(DcMotor.Direction.REVERSE);
         // Set all motors to zero power
-        frontLeftDrive.setPower(0);
-        frontRightDrive.setPower(0);
-        backLeftDrive.setPower(0);
-        backRightDrive.setPower(0);
+        zeroDriveMotorPower();
         arm.setPower(0);
 
         leftServo.setPosition(0.1);
@@ -132,6 +130,19 @@ public class CanaryBot
         frontRightDrive.setPower(frontRightPower);
         backLeftDrive.setPower(backLeftPower);
         backRightDrive.setPower(backRightPower);
+
+    }
+
+    public void zeroDriveMotorPower(){updateMechanumWheels(0,0,0);}
+
+    public void moveNumFeet(double num){
+
+        updateMechanumWheels(1.0,0,0);
+
+        //TODO:1000 is a temporary value
+        sleep((long)(1000*num));
+
+        zeroDriveMotorPower();
 
     }
 
