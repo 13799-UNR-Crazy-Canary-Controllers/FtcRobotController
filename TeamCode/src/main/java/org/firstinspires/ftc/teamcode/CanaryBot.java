@@ -122,6 +122,7 @@ public class CanaryBot
             double drive, double strafe, double rotate
     ){
 
+        //TODO: find out if strafe+ is left/right, find out if rotate+ is clockwise/counterclockwise
         double frontLeftPower = drive - strafe - rotate;
         double frontRightPower = drive + strafe + rotate;
         double backLeftPower = drive + strafe - rotate;
