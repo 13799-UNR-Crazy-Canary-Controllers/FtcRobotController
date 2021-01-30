@@ -38,14 +38,18 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         switch (stack) {
             case ZERO:
                 // move the front of the robot 4 tiles forward and 1/2 tile to the right (if on red, left on blue)
+                telemetry.addData("Status", "I see 0 rings");
                 break;
             case ONE:
                 // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
+                telemetry.addData("Status", "I see 1 ring");
                 break;
             case FOUR:
                 // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
+                telemetry.addData("Status", "I see 4 rings");
                 break;
             default:
+                telemetry.addData("Status", "I am a blind bird");
                 break;
 
         }
