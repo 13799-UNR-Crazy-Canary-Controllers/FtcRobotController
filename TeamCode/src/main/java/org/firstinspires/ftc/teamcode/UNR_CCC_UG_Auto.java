@@ -48,7 +48,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
             case FOUR:
                 // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
                 telemetry.addData("Status", "I see 4 rings");
-                canarybotto.moveNumFeet(-0.5);
+                canarybotto.moveNumFeet();
                 break;
             default:
                 telemetry.addData("Status", "I am a blind bird");

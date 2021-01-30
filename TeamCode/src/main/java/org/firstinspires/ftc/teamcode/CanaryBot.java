@@ -137,9 +137,10 @@ public class CanaryBot
 
     public void moveNumFeet(double num){
 
-        updateMechanumWheels(1.0,0,0);
+        updateMechanumWheels(0.5,0,0);
 
         //TODO:1000 is a temporary value
+        //TODO: add logic for positive and negative
         sleep((long)(1000*num));
 
         zeroDriveMotorPower();
