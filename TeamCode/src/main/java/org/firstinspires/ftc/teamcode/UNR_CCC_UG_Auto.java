@@ -16,13 +16,13 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
     //  Use a Pushbot's hardware
     private ElapsedTime runtime = new ElapsedTime();
 
-//        initializing stack detector
-    com.arcrobotics.ftclib.vision.UGRectDetector UGRectDetector = new UGRectDetector(hardwareMap);
-
     @Override
     public void runOpMode() {
 
         canarybotto.init(hardwareMap);
+
+//        initializing stack detector
+        com.arcrobotics.ftclib.vision.UGRectDetector UGRectDetector = new UGRectDetector(hardwareMap);
 
         UGRectDetector.init();
 
