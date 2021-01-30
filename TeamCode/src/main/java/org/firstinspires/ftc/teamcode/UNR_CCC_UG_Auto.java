@@ -12,7 +12,8 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 public class UNR_CCC_UG_Auto extends LinearOpMode {
 
-    HardwarePushbot robot   = new HardwarePushbot();   // Use a Pushbot's hardware
+    private CanaryBot canarybotto = new CanaryBot();
+    //  Use a Pushbot's hardware
     private ElapsedTime runtime = new ElapsedTime();
 
 //        initializing stack detector
@@ -21,7 +22,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
     @Override
     public void runOpMode() {
 
-        robot.init(hardwareMap);
+        canarybotto.init(hardwareMap);
 
         UGRectDetector.init();
 
