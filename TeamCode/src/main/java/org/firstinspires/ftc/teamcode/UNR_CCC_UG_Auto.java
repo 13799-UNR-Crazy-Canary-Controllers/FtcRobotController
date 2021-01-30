@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
-@Autonomous(name="UNR_CCC_AUTO_BASIC_STARTRIGHT", group="Pushbot")
+@Autonomous(name="UNR_CCC_UG", group="Pushbot")
 
 public class UNR_CCC_UG_Auto extends LinearOpMode {
 
