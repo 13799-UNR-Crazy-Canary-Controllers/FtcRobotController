@@ -90,7 +90,7 @@ public class UNR_CCC_Teleop extends OpMode
     @Override
     public void loop() {
 
-        double armPower;
+//        double armPower;
         double drive;
         double strafe;
         double rotate;
@@ -98,22 +98,22 @@ public class UNR_CCC_Teleop extends OpMode
         drive = gamepad1.left_stick_y;
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
-        armPower = -gamepad2.right_stick_y;
+//        armPower = -gamepad2.right_stick_y;
 
         canarybotto.updateMechanumWheels(drive,strafe,rotate);
 
-        canarybotto.arm.setPower(armPower);
+//        canarybotto.arm.setPower(armPower);
 
         // Servo
         if(gamepad2.left_bumper){
 
-            canarybotto.leftServo.setPosition(0.35);
-            canarybotto.rightServo.setPosition(0.50);
+//            canarybotto.leftServo.setPosition(0.35);
+//            canarybotto.rightServo.setPosition(0.50);
 
         }
         else{
-            canarybotto.leftServo.setPosition(0.1);
-            canarybotto.rightServo.setPosition(0.75);
+//            canarybotto.leftServo.setPosition(0.1);
+//            canarybotto.rightServo.setPosition(0.75);
 
         }
 
