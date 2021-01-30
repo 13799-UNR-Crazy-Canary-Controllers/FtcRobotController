@@ -53,5 +53,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
                 break;
 
         }
+        telemetry.update();
+        sleep(5000);
     }
 }
