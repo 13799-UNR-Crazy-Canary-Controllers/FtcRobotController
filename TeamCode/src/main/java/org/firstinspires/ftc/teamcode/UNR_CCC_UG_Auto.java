@@ -39,7 +39,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
             case ZERO:
                 // move the front of the robot 4 tiles forward and 1/2 tile to the right (if on red, left on blue)
                 telemetry.addData("Status", "I see 0 rings");
-                canarybotto.moveNumFeet(0.5);
+                canarybotto.moveNumFeet(2.0);
                 break;
             case ONE:
                 // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
@@ -48,7 +48,8 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
             case FOUR:
                 // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
                 telemetry.addData("Status", "I see 4 rings");
-                canarybotto.moveNumFeet();
+                canarybotto.moveNumFeet(2.0);
+//                seems to only see 4 rings in the garage lights
                 break;
             default:
                 telemetry.addData("Status", "I am a blind bird");
