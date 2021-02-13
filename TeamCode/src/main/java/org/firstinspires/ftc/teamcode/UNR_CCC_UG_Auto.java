@@ -42,10 +42,10 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         canarybotto.backRightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         // set motors to run forward for 5000 encoder counts.
-        canarybotto.frontLeftDrive.setTargetPosition(2493);
-        canarybotto.frontRightDrive.setTargetPosition(2493);
-        canarybotto.backLeftDrive.setTargetPosition(2493);
-        canarybotto.backRightDrive.setTargetPosition(2493);
+        canarybotto.frontLeftDrive.setTargetPosition(2205);
+        canarybotto.frontRightDrive.setTargetPosition(2205);
+        canarybotto.backLeftDrive.setTargetPosition(2205);
+        canarybotto.backRightDrive.setTargetPosition(2205);
 
         // set motors to run to target encoder position and stop with brakes on.
         canarybotto.frontLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
