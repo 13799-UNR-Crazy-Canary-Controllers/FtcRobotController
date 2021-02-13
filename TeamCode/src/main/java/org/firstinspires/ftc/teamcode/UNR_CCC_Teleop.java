@@ -98,16 +98,14 @@ public class UNR_CCC_Teleop extends OpMode
         double forwardsSpeedFactor = 1.0;
         double turnSpeedFactor = 1.0;
 
-        drive = gamepad1.left_stick_y;
-        strafe = gamepad1.left_stick_x;
-        rotate = gamepad1.right_stick_x;
+        drive = - gamepad1.left_stick_y;
+        strafe = - gamepad1.left_stick_x;
+        rotate = - gamepad1.right_stick_x;
 //        armPower = -gamepad2.right_stick_y;
-
-        canarybotto.updateMechanumWheels(drive,strafe,rotate);
 
 //        canarybotto.arm.setPower(armPower);
 
-        if(gamepad1.right_bumper){
+        if(!gamepad1.left_bumper){
             forwardsSpeedFactor = 0.4;
             turnSpeedFactor = 0.5;
         }
@@ -116,6 +114,11 @@ public class UNR_CCC_Teleop extends OpMode
             turnSpeedFactor = 1.0;
         }
 
+        drive *= forwardsSpeedFactor;
+        strafe *= forwardsSpeedFactor;
+        rotate *= turnSpeedFactor;
+
+        canarybotto.updateMechanumWheels(drive,strafe,rotate);
         // Servo
         if(gamepad2.left_bumper){
 
