@@ -34,24 +34,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        // reset encoder counts kept by motors.
-        // reset encoder counts kept by motors.
-        canarybotto.frontLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        canarybotto.frontRightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        canarybotto.backLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        canarybotto.backRightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        // set motors to run forward for 5000 encoder counts.
-        canarybotto.frontLeftDrive.setTargetPosition(2205);
-        canarybotto.frontRightDrive.setTargetPosition(2205);
-        canarybotto.backLeftDrive.setTargetPosition(2205);
-        canarybotto.backRightDrive.setTargetPosition(2205);
-
-        // set motors to run to target encoder position and stop with brakes on.
-        canarybotto.frontLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        canarybotto.frontRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        canarybotto.backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        canarybotto.backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        canarybotto.driveMotorsForwards(2205);
 
         telemetry.addData("Mode", "waiting");
         telemetry.update();
