@@ -34,7 +34,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        canarybotto.driveMotorsForwards(78);
+        canarybotto.driveMotorsForwards(69);
 
         telemetry.addData("Mode", "waiting");
         telemetry.update();
