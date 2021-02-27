@@ -118,21 +118,31 @@ public class CanaryBot
     public void driveMotorsForwards(
             int inches
     ){
+        int steps = convertInchesToSteps(inches);
         frontLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         frontRightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         backLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         backRightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        frontLeftDrive.setTargetPosition(inches);
-        frontRightDrive.setTargetPosition(inches);
-        backLeftDrive.setTargetPosition(inches);
-        backRightDrive.setTargetPosition(inches);
+        frontLeftDrive.setTargetPosition(steps);
+        frontRightDrive.setTargetPosition(steps);
+        backLeftDrive.setTargetPosition(steps);
+        backRightDrive.setTargetPosition(steps);
 
         frontLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         frontRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
+    private int convertInchesToSteps(
+          int inches
+    ){
+        int steps;
+        steps = (int) (inches * 31.96);
+        return steps;
+    }
+
+
     public void updateMechanumWheels(
             double drive, double strafe, double rotate
     ){
