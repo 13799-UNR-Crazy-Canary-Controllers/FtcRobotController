@@ -137,6 +137,7 @@ public class CanaryBot
 
         waitForMotorsNotBusy(0.25, opmode);
     }
+
     public void driveMotorsRight(
             int inches, LinearOpMode opmode
     ){
