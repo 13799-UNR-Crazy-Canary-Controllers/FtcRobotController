@@ -82,28 +82,30 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
 
         UGRectDetector.Stack stack = UGRectDetector.getStack();
 
-//        switch (stack) {
-//            case ZERO:
+        switch (stack) {
+            case ZERO:
 //                // move the front of the robot 4 tiles forward and 1/2 tile to the right (if on red, left on blue)
-//                telemetry.addData("Status", "I see 0 rings");
-//                canarybotto.moveNumFeet(2.0);
-//                break;
-//            case ONE:
+                telemetry.addData("Status", "I see 0 rings");
+                canarybotto.driveMotorsForwards(84);
+                canarybotto.driveMotorsForwards();
+                break;
+            case ONE:
 //                // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
-//                telemetry.addData("Status", "I see 1 ring");
-//                break;
-//            case FOUR:
+                telemetry.addData("Status", "I see 1 ring");
+                canarybotto.driveMotorsForwards(108);
+                break;
+            case FOUR:
 //                // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
-//                telemetry.addData("Status", "I see 4 rings");
-//                canarybotto.moveNumFeet(2.0);
+                telemetry.addData("Status", "I see 4 rings");
+                canarybotto.driveMotorsForwards(132);
 //                seems to only see 4 rings in the garage lights
-//                break;
-//            default:
-//                telemetry.addData("Status", "I am a blind bird");
-//                break;
-//
-//        }
-//        telemetry.update();
-//        sleep(5000);
+                break;
+            default:
+                telemetry.addData("Status", "I am a blind bird");
+                break;
+
+        }
+        telemetry.update();
+        sleep(5000);
     }
 }
