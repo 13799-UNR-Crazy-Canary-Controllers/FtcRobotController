@@ -28,6 +28,7 @@
  */
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -116,7 +117,7 @@ public class CanaryBot
 //        rightClaw.setPosition(MID_SERVO);
     }
     public void driveMotorsForwards(
-            int inches
+            int inches, LinearOpMode opmode
     ){
         int steps = convertInchesToSteps(inches);
         frontLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -133,9 +134,11 @@ public class CanaryBot
         frontRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        waitForMotorsNotBusy(0.25, opmode);
     }
     public void driveMotorsRight(
-            int inches
+            int inches, LinearOpMode opmode
     ){
         int steps = convertInchesToSteps(inches);
         frontLeftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -152,7 +155,39 @@ public class CanaryBot
         frontRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        waitForMotorsNotBusy(0.25, opmode);
     }
+
+    public void waitForMotorsNotBusy(
+            double power,
+            LinearOpMode opmode
+
+    ){
+        frontLeftDrive.setPower(power);
+        frontRightDrive.setPower(power);
+        backLeftDrive.setPower(power);
+        backRightDrive.setPower(power);
+
+        // wait while opmode is active and left motor is busy running to position.
+
+        while (opmode.opModeIsActive() && frontLeftDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
+        {
+            opmode.idle();
+        }
+        while (opmode.opModeIsActive() && frontRightDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
+        {
+            opmode.idle();
+        }while (opmode.opModeIsActive() && backLeftDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
+        {
+            opmode.idle();
+        }while (opmode.opModeIsActive() && backRightDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
+        {
+            opmode.idle();
+        }
+    }
+
+
 
     private int convertInchesToSteps(
           int inches
