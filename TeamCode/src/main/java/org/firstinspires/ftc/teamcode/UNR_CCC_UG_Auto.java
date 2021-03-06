@@ -64,12 +64,14 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
                 telemetry.addData("Status", "I see 0 rings");
                 telemetry.update();
                 canarybotto.driveMotorsForwards(72, this);
+                canarybotto.driveMotorsRight(6,this);
                 break;
             case ONE:
 //                // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
                 telemetry.addData("Status", "I see 1 ring");
                 telemetry.update();
                 canarybotto.driveMotorsForwards(96, this);
+                canarybotto.driveMotorsRight(6,this);
                 canarybotto.moveArmUp();
                 canarybotto.driveMotorsForwards(-24, this);
                 break;
@@ -77,7 +79,8 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
 //                // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
                 telemetry.addData("Status", "I see 4 rings");
                 telemetry.update();
-                canarybotto.driveMotorsForwards(110,this);
+                canarybotto.driveMotorsForwards(112,this);
+                canarybotto.driveMotorsRight(6,this);
                 canarybotto.moveArmUp();
                 canarybotto.driveMotorsForwards(-41, this);
 //                seems to only see 4 rings in the garage lights
