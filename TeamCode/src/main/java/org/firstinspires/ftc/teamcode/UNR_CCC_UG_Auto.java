@@ -62,12 +62,14 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
             case ZERO:
 //                // move the front of the robot 4 tiles forward and 1/2 tile to the right (if on red, left on blue)
                 telemetry.addData("Status", "I see 0 rings");
+                telemetry.update();
                 canarybotto.driveMotorsForwards(72, this);
                 canarybotto.driveMotorsRight(-12, this);
                 break;
             case ONE:
 //                // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
                 telemetry.addData("Status", "I see 1 ring");
+                telemetry.update();
                 canarybotto.driveMotorsForwards(96, this);
                 canarybotto.driveMotorsRight(12,this);
                 canarybotto.moveArmUp();
@@ -76,6 +78,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
             case FOUR:
 //                // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
                 telemetry.addData("Status", "I see 4 rings");
+                telemetry.update();
                 canarybotto.driveMotorsForwards(110,this);
                 canarybotto.driveMotorsRight(-12,this);
                 canarybotto.moveArmUp();
@@ -84,10 +87,9 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
                 break;
               default:
                 telemetry.addData("Status", "I am a blind bird");
+                telemetry.update();
                 break;
 
         }
-        telemetry.update();
-        sleep(5000);
     }
 }
