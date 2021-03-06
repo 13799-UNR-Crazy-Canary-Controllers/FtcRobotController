@@ -105,7 +105,7 @@ public class UNR_CCC_Teleop extends OpMode
 
 //        canarybotto.arm.setPower(armPower);
 
-        if(!gamepad1.left_bumper){
+        if(!gamepad2.x){
             forwardsSpeedFactor = 0.4;
             turnSpeedFactor = 0.5;
         }
@@ -143,12 +143,6 @@ public class UNR_CCC_Teleop extends OpMode
 
         }
 
-        if(gamepad2.x){
-
-            //collect
-            //toggle
-
-        }
         if(gamepad2.b){
 
             //stop collecting
