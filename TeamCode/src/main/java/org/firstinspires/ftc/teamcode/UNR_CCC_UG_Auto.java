@@ -73,6 +73,7 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
                 canarybotto.driveMotorsForwards(96, this);
                 canarybotto.driveMotorsRight(6,this);
                 canarybotto.moveArmUp();
+                sleep(1000);
                 canarybotto.driveMotorsForwards(-24, this);
                 break;
             case FOUR:
@@ -82,7 +83,8 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
                 canarybotto.driveMotorsForwards(96,this);
                 canarybotto.driveMotorsRight(6,this);
                 canarybotto.moveArmUp();
-                canarybotto.driveMotorsForwards(-41, this);
+                sleep(1000);
+                canarybotto.driveMotorsForwards(-29, this);
 //                seems to only see 4 rings in the garage lights
                 break;
               default:
