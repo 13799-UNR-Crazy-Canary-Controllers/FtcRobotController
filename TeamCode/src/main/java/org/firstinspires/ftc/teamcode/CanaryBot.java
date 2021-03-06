@@ -141,7 +141,7 @@ public class CanaryBot
         backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        waitForMotorsNotBusy(0.25, opmode);
+        waitForMotorsNotBusy(0.15, opmode);
     }
 
     public void driveMotorsRight(
@@ -163,7 +163,7 @@ public class CanaryBot
         backLeftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        waitForMotorsNotBusy(0.25, opmode);
+        waitForMotorsNotBusy(0.15, opmode);
     }
 
     public void waitForMotorsNotBusy(
