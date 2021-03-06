@@ -59,6 +59,7 @@ public class CanaryBot
     public DcMotor frontRightDrive = null;
     public DcMotor backLeftDrive = null;
     public DcMotor backRightDrive = null;
+    public Servo arm = null;
 //    public DcMotor arm = null;
 //    public Servo leftServo = null;
 //    public Servo rightServo = null;
@@ -69,6 +70,9 @@ public class CanaryBot
 //    public static final double MID_SERVO       =  0.5 ;
 //    public static final double ARM_UP_POWER    =  0.45 ;
 //    public static final double ARM_DOWN_POWER  = -0.45 ;
+
+    public static final double ARM_up = 0.0;
+    public static final double ARM_down = 0.5;
 
     /* local OpMode members. */
     HardwareMap hwMap           =  null;
@@ -89,6 +93,8 @@ public class CanaryBot
         frontRightDrive = hwMap.get(DcMotor.class,"FR");
         backLeftDrive = hwMap.get(DcMotor.class,"BL");
         backRightDrive = hwMap.get(DcMotor.class,"BR");
+
+        arm = hwMap.get(Servo.class, "arm");
 //        arm = hwMap.get(DcMotor.class,"arm");
 //        leftServo = hwMap.get(Servo.class,"LeftGripper");
 //        rightServo = hwMap.get(Servo.class,"rightGripper");
@@ -198,6 +204,13 @@ public class CanaryBot
         return steps;
     }
 
+    public void moveArmUp(){
+        arm.setPosition(ARM_up);
+    }
+
+    public void moveArmDown(){
+        arm.setPosition(ARM_down);
+    }
 
     public void updateMechanumWheels(
             double drive, double strafe, double rotate

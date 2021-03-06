@@ -34,7 +34,8 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        canarybotto.driveMotorsForwards(69, this);
+//        canarybotto.driveMotorsForwards(69, this);
+//        canarybotto.driveMotorsRight(-12, this);
 
         telemetry.addData("Mode", "waiting");
         telemetry.update();
@@ -44,31 +45,6 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         telemetry.addData("Mode", "running");
         telemetry.update();
 
-        // set both motors to 25% power. Movement will start. Sign of power is
-        // ignored as sign of target encoder position controls direction when
-        // running to position.
-
-        canarybotto.frontLeftDrive.setPower(0.25);
-        canarybotto.frontRightDrive.setPower(0.25);
-        canarybotto.backLeftDrive.setPower(0.25);
-        canarybotto.backRightDrive.setPower(0.25);
-
-        // wait while opmode is active and left motor is busy running to position.
-
-        while (opModeIsActive() && canarybotto.frontLeftDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
-        {
-            idle();
-        }
-        while (opModeIsActive() && canarybotto.frontRightDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
-        {
-            idle();
-        }while (opModeIsActive() && canarybotto.backLeftDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
-        {
-            idle();
-        }while (opModeIsActive() && canarybotto.backRightDrive.isBusy())   //leftMotor.getCurrentPosition() < leftMotor.getTargetPosition())
-        {
-            idle();
-        }
 
         // set motor power to zero to turn off motors. The motors stop on their own but
         // power is still applied so we turn off the power.
@@ -78,33 +54,35 @@ public class UNR_CCC_UG_Auto extends LinearOpMode {
         canarybotto.backLeftDrive.setPower(0.0);
         canarybotto.backRightDrive.setPower(0.0);
 
+        canarybotto.moveArmDown();
+
         UGRectDetector.Stack stack = UGRectDetector.getStack();
 
         switch (stack) {
             case ZERO:
 //                // move the front of the robot 4 tiles forward and 1/2 tile to the right (if on red, left on blue)
                 telemetry.addData("Status", "I see 0 rings");
-                canarybotto.driveMotorsForwards(84);
-                canarybotto.driveMotorsRight(-12);
+                canarybotto.driveMotorsForwards(84, this);
+                canarybotto.driveMotorsRight(-12, this);
                 break;
             case ONE:
 //                // move the front of the robot 5 tiles forward and 1/2 a tile to the left (right on blue)
                 telemetry.addData("Status", "I see 1 ring");
-                canarybotto.driveMotorsForwards(108);
-                canarybotto.driveMotorsRight(12);
-                canarybotto.driveMotorsRight(-6);
-                canarybotto.driveMotorsForwards(-24);
+                canarybotto.driveMotorsForwards(108, this);
+                canarybotto.driveMotorsRight(12,this);
+                canarybotto.moveArmUp();
+                canarybotto.driveMotorsForwards(-24, this);
                 break;
             case FOUR:
 //                // move the front of the robot 6 tiles forward and 1/2 a tile to the right (left on blue)
                 telemetry.addData("Status", "I see 4 rings");
-                canarybotto.driveMotorsForwards(132);
-                canarybotto.driveMotorsRight(-12);
-                canarybotto.driveMotorsRight(6);
-                canarybotto.driveMotorsForwards(48);
+                canarybotto.driveMotorsForwards(132,this);
+                canarybotto.driveMotorsRight(-12,this);
+                canarybotto.moveArmUp();
+                canarybotto.driveMotorsForwards(-48, this);
 //                seems to only see 4 rings in the garage lights
                 break;
-            default:
+              default:
                 telemetry.addData("Status", "I am a blind bird");
                 break;
 

@@ -120,17 +120,15 @@ public class UNR_CCC_Teleop extends OpMode
 
         canarybotto.updateMechanumWheels(drive,strafe,rotate);
         // Servo
-        if(gamepad2.left_bumper){
-
-//            canarybotto.leftServo.setPosition(0.35);
-//            canarybotto.rightServo.setPosition(0.50);
+        if(gamepad1.a){
+            canarybotto.arm.setPosition(0.0);
 
         }
-        else{
-//            canarybotto.leftServo.setPosition(0.1);
-//            canarybotto.rightServo.setPosition(0.75);
 
+        if(gamepad1.b){
+            canarybotto.arm.setPosition(0.05);
         }
+
 
         // Launcher
         if(gamepad2.a) {
